@@ -23,3 +23,7 @@ df_limpo['quantidade']= df_limpo['quantidade'].fillna(0).astype('int')
 
 df_limpo= df_limpo.groupby(by= ['Mes_Ano', 'munic', 'regiao', 'tipo_crime'], as_index= False).sum()
 
+df_limpo.to_csv(r'C:\Users\Pedro\Documents\GitHub\analise-criminalidade-rj\data\processed\Base_limpo.csv', 
+                sep=';', 
+                encoding='utf-8', 
+                index= False)
