@@ -10,10 +10,27 @@ Instituto de Segurança Pública (ISP-RJ)
 
 ## 📂 Estrutura do projeto
 
-## Como executar o projeto
+data/ → dados brutos e tratados  
+notebooks/ → análises exploratórias  
+src/ → scripts de tratamento de dados  
+dashboards/ → dashboards criados  
+images/ → imagens e gráficos  
+
+## ▶️ Como executar o projeto
+
+Clone o repositório
+    git clone https://github.com/GarciaRPedro/analise-criminalidade-rj
+
+Instale as dependências
+    pip install -r requirements.txt
+
+Execute o notebook ou aplicação
 
 ## Exemplos de análise
 
 ## Insights obtidos
 
-## Autor
+## 👤 Autor
+
+Pedro Garcia  
+Analista de Dados Jr
