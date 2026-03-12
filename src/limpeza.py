@@ -13,7 +13,9 @@ df_limpo= df.melt(id_vars= ["mes", "ano", "munic"],
                      'hom_culposo', 'lesao_corp_culposa','total_roubos', 'total_furtos', 'registro_ocorrencias'],
         value_name= "quantidade")
 
-df_limpo['mes']= df_limpo['ano']  + '_' + '0' +  df_limpo['mes']
+df_limpo['mes']= df_limpo['mes'].str.zfill(2)
+
+df_limpo['mes']= df_limpo['ano']  + '_' + df_limpo['mes']
 
 df_limpo.rename(columns= {'mes':'Mes_Ano'}, inplace= True)
 
