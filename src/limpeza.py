@@ -1,6 +1,6 @@
 import pandas as pd
 
-df= pd.read_csv(r'C:\Users\Pedro\Documents\GitHub\analise-criminalidade-rj\data\raw\BaseDPEvolucaoMensalCisp.csv', 
+df= pd.read_csv(r'data\raw\BaseDPEvolucaoMensalCisp.csv', 
                 encoding= 'latin1', 
                 sep= ';', 
                 dtype='str')
@@ -23,7 +23,7 @@ df_limpo['quantidade']= df_limpo['quantidade'].fillna(0).astype('int')
 
 df_limpo= df_limpo.groupby(by= ['Mes_Ano', 'munic', 'tipo_crime'], as_index= False).sum()
 
-df_limpo.to_csv(r'C:\Users\Pedro\Documents\GitHub\analise-criminalidade-rj\data\processed\Base_limpo.csv', 
+df_limpo.to_csv(r'data\processed\Base_limpo.csv', 
                 sep=';', 
                 encoding='utf-8', 
                 index= False)
