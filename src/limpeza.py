@@ -5,7 +5,7 @@ df= pd.read_csv(r'C:\Users\Pedro\Documents\GitHub\analise-criminalidade-rj\data\
                 sep= ';', 
                 dtype='str')
 
-df_limpo= df.melt(id_vars= ["mes", "ano", "munic", "regiao"],
+df_limpo= df.melt(id_vars= ["mes", "ano", "munic"],
         var_name= "tipo_crime",
         value_vars= ['hom_doloso', 'lesao_corp_morte', 'latrocinio', 'cvli',
                      'hom_por_interv_policial', 'feminicidio', 'letalidade_violenta',
@@ -21,7 +21,7 @@ df_limpo.drop(columns= 'ano', inplace= True)
 
 df_limpo['quantidade']= df_limpo['quantidade'].fillna(0).astype('int')
 
-df_limpo= df_limpo.groupby(by= ['Mes_Ano', 'munic', 'regiao', 'tipo_crime'], as_index= False).sum()
+df_limpo= df_limpo.groupby(by= ['Mes_Ano', 'munic', 'tipo_crime'], as_index= False).sum()
 
 df_limpo.to_csv(r'C:\Users\Pedro\Documents\GitHub\analise-criminalidade-rj\data\processed\Base_limpo.csv', 
                 sep=';', 
